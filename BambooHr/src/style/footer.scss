@@ -1,0 +1,10 @@
+.footer-container {
+    height: 636px;
+    background-color: $darkSlateGray;
+
+    .footer-wrapper {
+        display: grid;
+        grid-template-rows: 1fr;
+        height: 456px;
+    }
+}
