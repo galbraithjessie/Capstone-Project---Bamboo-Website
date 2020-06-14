@@ -1,4 +1,6 @@
 @import './variables.scss';
+@import './mixins.scss';
+@import './button.scss';
 @import './navigation/navigation-container.scss';
 
 html {
@@ -11,7 +13,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'montserrat';
+    font-family: 'Exo 2', sans-serif;
 }
 
 body {

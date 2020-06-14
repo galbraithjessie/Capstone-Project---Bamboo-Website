@@ -17,8 +17,8 @@ export default class NavigationContainer extends Component {
                 <div>About BambooHR</div>
               </div>
               <div className='right-nav'>
-                <div>Log In</div>
-                <div>Try it Free</div>
+                <button className='btn login'>Log In</button>
+                <button className='btn try'>Try it Free</button>
               </div>
           </div>
        );
