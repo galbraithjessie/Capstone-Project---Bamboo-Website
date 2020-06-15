@@ -1,10 +1,80 @@
 .footer-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
     height: 636px;
     background-color: $darkSlateGray;
 
     .footer-wrapper {
         display: grid;
-        grid-template-rows: 1fr;
+        grid-template-columns:[company-s] 1fr [company-e support-s] 1fr [support-e subscribe-s] 1.5fr [subscribe-e];
         height: 456px;
+
+        h1 {
+            color: $white;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 29px;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+        }
+
+        .footer-link {
+            color: $lightGray;
+            font-size: 14px;
+            font-weight: 600;
+            padding-bottom: 15px;
+        }
+
+        .footer-left {
+            grid-column: company-s/company-e;
+            grid-row: s/e;
+
+            .footer-left-links {
+                display: grid;
+                grid-template-columns: [LeftColumn-s] 1fr [leftColumn-e  rightColumn-s] 1fr [rightColumn-e];
+                grid-template-rows: 40px [left-s] 1fr [left-e];
+
+                .footer-left-links__left {     
+                    grid-column: LeftColumn-s/LeftColumn-e;
+                    grid-row: 1/-1;      
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    
+                }
+                    
+                .footer-left-links__right { 
+                    grid-column: rightColumn-s/rightColumn-e; 
+                    grid-row: 1/-1;
+                    display: grid;
+                    grid-row: 1fr;
+                }
+            }
+            
+        }
+        .footer-middle {
+            grid-column: support-s/support-e;
+            grid-row: s/e;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 40px [middle-s] 1fr [middle-e];
+
+            .footer-middle-links__left {
+                grid-row: middle-s/middle-e;                
+                display: grid;
+                grid-template-rows: 1fr;
+            }
+            .footer-middle-links__right {
+                grid-row: middle-s/middle-e;
+                display: grid;
+                grid-row: 1/-1;
+            }
+        }
+        .footer-right {
+            grid-column: subscribe-s/subscribe-e;
+            grid-row: s/e;
+        }
+        
     }
 }
