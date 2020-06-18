@@ -1,80 +1,131 @@
-.footer-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 636px;
+.footer {
+    width: 100%;
+    height: 656px;
     background-color: $darkSlateGray;
-
-    .footer-wrapper {
+    display: grid;
+    grid-template-rows: 35px [f-s] 1fr [f-e] 35px;
+    grid-template-columns: 35px [footer-c-s] 1fr [footer-c-e] 35px;
+    justify-content: center;
+    
+    
+    .footer-container {
+        grid-row: f-s/f-e;
+        grid-column: footer-c-s/footer-c-e;
         display: grid;
-        grid-template-columns:[company-s] 1fr [company-e support-s] 1fr [support-e subscribe-s] 1.5fr [subscribe-e];
-        height: 456px;
+        grid-template-rows: 55px [wrapper-top-s] 267px [wrapper-top-e wrapper-mid-s] 113px [wrapper-mid-e wrapper-bottom-s] 36px [wrapper-bottom-e] 55px;
+        grid-template-columns: 35px [s] auto [e] 35px;
+        
+        justify-content: center;
+        align-items: center;
 
-        h1 {
-            color: $white;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 29px;
-            margin-bottom: 10px;
-            padding-bottom: 15px;
-        }
+        
+        
 
-        .footer-link {
-            color: $lightGray;
-            font-size: 14px;
-            font-weight: 600;
-            padding-bottom: 15px;
-        }
+        .footer-wrapper-top {
+            grid-row: wrapper-top-s/wrapper-top-e;
+            grid-column: s/e;
+            display: grid;
+            grid-template-columns:[company-s] 1fr [company-e support-s] 1fr [support-e subscribe-s] 1.50fr [subscribe-e];
+            height: 267px;
+            width: 100%;
+            column-gap: 8%;
+            
+            h1 {
+                color: $white;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 29px;
+                margin-bottom: 10px;
+                padding-bottom: 15px;
+            }
 
-        .footer-left {
-            grid-column: company-s/company-e;
-            grid-row: s/e;
+            .footer-link {
+                color: $lightGray;
+                font-size: 14px;
+                font-weight: 600;
+                padding-bottom: 15px;
+            }
 
-            .footer-left-links {
+            .footer-left {
+                grid-column: company-s/company-e;
+                grid-row: s/e;
+
+                .footer-left-links {
+                    width: 266px;
+                    display: grid;
+                    grid-template-columns: [LeftColumn-s] 1fr [leftColumn-e  rightColumn-s] 1fr [rightColumn-e];
+                    grid-template-rows: [left-s] 1fr [left-e];
+
+                    .footer-left-links__left {     
+                        grid-column: LeftColumn-s/LeftColumn-e;
+                        grid-row: left-s/left-e;      
+                        display: flex;
+                        flex-direction: column;
+                        
+                    }
+                        
+                    .footer-left-links__right { 
+                        grid-column: rightColumn-s/rightColumn-e; 
+                        grid-row: left-s/left-e;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                
+            }
+            .footer-middle {
+                grid-column: support-s/support-e;
+                grid-row: s/e;
+                
+
                 display: grid;
-                grid-template-columns: [LeftColumn-s] 1fr [leftColumn-e  rightColumn-s] 1fr [rightColumn-e];
-                grid-template-rows: 40px [left-s] 1fr [left-e];
+                grid-template-columns: [f-m-s]  1fr [f-m-e];
+                grid-template-rows: [heading-s] 45px [heading-e middle-s] 1fr [middle-e];
 
-                .footer-left-links__left {     
-                    grid-column: LeftColumn-s/LeftColumn-e;
-                    grid-row: 1/-1;      
-                    display: grid;
-                    grid-template-rows: 1fr;
-                    
+                .h1 {
+                    grid-column: 1/-1;
+                    grid-row: heading-s/heading-e;
                 }
-                    
-                .footer-left-links__right { 
-                    grid-column: rightColumn-s/rightColumn-e; 
-                    grid-row: 1/-1;
+
+                .footer-middle-links {
                     display: grid;
+                    width: 266px;
+                    grid-template-columns: [m-column-l] 1fr [m-column-m] 1fr [m-column-e];
                     grid-row: 1fr;
+                    padding-top: 11px; 
+                    
+
+                    .footer-middle-links__left {
+                        grid-column: m-column-l/m-column-m;
+                        grid-row: 1/-1;
+                        display: flex;
+                        flex-direction: column;
+                                        
+                    }
+                    .footer-middle-links__right {
+                        grid-column: m-column-m/m-column-e;                
+                        display: flex;
+                        flex-direction: column;
+                        
+                    }
                 }
+            }
+            .footer-right {
+                grid-column: subscribe-s/subscribe-e;
+                grid-row: s/e;
+                width: 400px;
             }
             
         }
-        .footer-middle {
-            grid-column: support-s/support-e;
-            grid-row: s/e;
-
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 40px [middle-s] 1fr [middle-e];
-
-            .footer-middle-links__left {
-                grid-row: middle-s/middle-e;                
-                display: grid;
-                grid-template-rows: 1fr;
-            }
-            .footer-middle-links__right {
-                grid-row: middle-s/middle-e;
-                display: grid;
-                grid-row: 1/-1;
-            }
+        .footer-wrapper-middle {
+            grid-row: wrapper-mid-s/wrapper-mid-e;
+            grid-column: s/e;
+            height: 113px;
         }
-        .footer-right {
-            grid-column: subscribe-s/subscribe-e;
-            grid-row: s/e;
+        .footer-wrapper-bottom {
+            grid-row: wrapper-bottom-s/wrapper-bottom-e;
+            grid-column: s/e;
+            height: 36px;
         }
-        
     }
 }

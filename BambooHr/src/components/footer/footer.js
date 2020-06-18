@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 export default class FooterContainer extends Component {
    render() {
        return(
+        <div className='footer'>
           <div className='footer-container'>
-              <div className='footer-wrapper'>
+              <div className='footer-wrapper-top'>
                     <div className='footer-left'>
                             <h1>Company</h1>
                             <div className='footer-left-links'>
@@ -47,19 +48,28 @@ export default class FooterContainer extends Component {
                     <div className='footer-right'>
                         <div className='footer-subscribe'>
                             <h1>Subscribe to our Newsletter</h1>
+                            <button>Submit</button>
                         </div>
 
-                        <div className='footer-bottom__social'>
-                            Social media Icons
-                        </div> 
+                         
 
-                        <div className="footer-bottom__copy-right">
-                        © 2020 My Content LLC. All Rights Reserved. My Content® is a registered trademark of My Content LLC
-                        </div>
+                        
                     </div>
 
                 </div>
+                <div className='footer-wrapper-middle'>
+                    <div className='footer-wrapper-middle__social'>
+                        Social media Icons
+                    </div>
+                    <div className="footer-wrapper-middle__copy-right">
+                        © 2020 My Content LLC. All Rights Reserved. My Content® is a registered trademark of My Content LLC
+                    </div>
+                </div>
+                <div className='footer-wrapper-bottom'>
+
+                </div>
           </div>
+        </div>
        );
    }
 }
