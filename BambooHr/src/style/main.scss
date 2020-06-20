@@ -4,6 +4,7 @@
 
 //footer and navigation
 @import './navigation/navigation-container.scss';
+@import './navigation/about-submenu.scss';
 @import './footer.scss';
 
 //pages
@@ -14,6 +15,7 @@
 @import './chatWidget.scss';
 
 html {
+    box-sizing: border-box;
     font-size: 62.5%; // 1rem is 10px
 }
 
@@ -22,7 +24,7 @@ html {
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
     font-family: 'Exo 2', sans-serif;
 }
 

@@ -41,12 +41,24 @@
 
             border: 2px solid $lightGreen;
             background-color: transparent;
-            color: $lightGreen;   
+            color: $lightGreen; 
+            
+            &:hover {
+            border: 2px solid $lightGreen;
+            background-color: $lightGreen;
+            color: $white; 
+            }
         }
         .try {
             width: 110px;
-            height: 35px;
+            height: 31px;
             font-size: 12px;
+
+            &:hover {
+                border: 2px solid $lightGreen;
+                background-color: transparent;
+                color: $lightGreen; 
+            }
         }
     }
 }

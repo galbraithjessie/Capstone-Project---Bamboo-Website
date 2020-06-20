@@ -1,0 +1,17 @@
+.about__submenu {
+    display: none;
+    width: 180px;
+    text-transform: none;
+    display: none;
+    position: absolute;
+}
+
+.nav__menu-item:hover {
+    display: inline-block;
+    margin: 2rem auto 0;
+
+    .about__submenu {
+        display: block;
+        width: 180px;
+    }
+}
