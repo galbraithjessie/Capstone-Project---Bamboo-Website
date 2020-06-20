@@ -1,10 +1,17 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './button.scss';
+
+//footer and navigation
 @import './navigation/navigation-container.scss';
 @import './footer.scss';
+
+//pages
 @import './pages/home.scss';
 @import './pages/packaging.scss';
+
+//widgets
+@import './chatWidget.scss';
 
 html {
     font-size: 62.5%; // 1rem is 10px

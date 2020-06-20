@@ -1,0 +1,41 @@
+.rcw-widget-container {
+    .rcw-launcher {
+        background-color: $lightGray;
+        
+        &:hover {
+            background-color: $darkSlateGray;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    span {
+        font-size: 1.25rem;
+    }
+
+    .rcw-conversation-container {
+        .rcw-header {
+            background-color: $lightGreen;
+        }
+
+        .rcw-messages-container{
+            
+            .rcw-message {
+                .rcw-response {
+                    .rcw-message-text {
+                        background-color: $lightGreen;
+                        color: $white;
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .rcw-client {
+                    .rcw-message-text {
+                        background-color: $lightGreen;
+                        color: $white;
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
