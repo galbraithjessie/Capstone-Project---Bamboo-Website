@@ -1,0 +1,36 @@
+.packages-container {
+    background-color: green;
+    height: 800px;
+    width: 100%;
+    color: whitesmoke;
+
+    display: grid;
+    justify-content: center;
+    padding-top: 24px;
+
+    .packages__heading {
+        width: 865px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        
+
+        h1 {
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        p {
+            line-height: 26px;
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+    }
+}
