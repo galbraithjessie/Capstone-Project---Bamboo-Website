@@ -1,17 +1,32 @@
 .about__submenu {
-    display: none;
-    width: 180px;
-    text-transform: none;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
     position: absolute;
+    
+    list-style-type: none;
+    width: 180px;
+    padding: 4px;
+
+    
+    line-height: 34px;
+    
+    height: 120px;
+    width: 170px;
 }
 
 .nav__menu-item:hover {
-    display: inline-block;
-    margin: 2rem auto 0;
-
+     
     .about__submenu {
-        display: block;
-        width: 180px;
+        visibility: visible;
+        position: fixed;
+
+        .about__submenu-item {
+            color: $lightGray;
+        
+            &:hover {
+                color: $lightGreen;
+            }
+        }
     }
 }
