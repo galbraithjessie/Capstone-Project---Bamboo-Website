@@ -1,10 +1,36 @@
 .home-container {
-    height: 880px;
-    
-  
-    .home-img {
-        height: 880px;
-        background-size: cover;
-        background-position: fixed;
+    height: 880px;    
+    background: $backGround;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    display: grid;
+    align-items: inherit;
+    justify-items: center;
+    grid-template-columns: 1fr;
+
+    .home-title {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        color: $white;
+        font-size: 84px;
+        font-weight: 600;
+    }
+
+    .home-video {
+        margin-top: -35px;
+    }
+
+    .btn {
+       height: 48px;
+       width: 180px;
+       transition: 0.3s ease-in-out; 
+       
+       &:hover {
+           border: 2px solid $forestGreen;
+           background-color: $forestGreen;
+
+       }
     }
 }
