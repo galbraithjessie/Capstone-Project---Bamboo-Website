@@ -21,22 +21,10 @@ const NavigationContainer = props => {
                 <a>Why BambooHR</a>
                 </div>
               <div className='nav__menu-item'>
-                <a>Resources</a>
+                <a>Blog</a>
                 </div>
               <div className='nav__menu-item'>
-                <a>About BambooHR
-                  <ul className="about__submenu">
-                    <li className='about__submenu-item'>
-                        <a>Our Story</a>
-                    </li>
-                    <li className='about__submenu-item'>
-                        <a>Contact</a>
-                    </li>
-                    <li className='about__submenu-item'>
-                        <a>Careers</a>
-                    </li>
-                  </ul>
-                </a>
+                <a>Contact</a>
               </div>
             
           </div>

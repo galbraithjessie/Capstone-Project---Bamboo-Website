@@ -4,7 +4,6 @@
 
 //footer and navigation
 @import './navigation/navigation-container.scss';
-@import './navigation/about-submenu.scss';
 @import './footer.scss';
 
 //pages
@@ -12,7 +11,7 @@
 @import './pages/packaging.scss';
 @import './pages/contact.scss';
 
-//widgets
+//widgets 
 @import './chatWidget.scss';
 
 html {
