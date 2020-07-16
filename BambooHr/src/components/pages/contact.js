@@ -5,11 +5,27 @@ import { faFacebookF, faTwitter, faInstagram, faLinkedin, faYoutube } from '@for
 
 
 const GoogleMapComponent = ({ text }) => <div>{ text }</div>;
- 
+
+//Office Hours div for current time and day MST
+const options = {
+   hour:  "2-digit",
+   minute: "2-digit",
+   timeZone: 'America/Denver'
+}
+const option = {
+   weekday: 'long'
+}
+
 export default class ContactUs extends Component {
    static defaultProps = {
       center: { lat: 40.332833, lng: -111.728768 },
       zoom: 14
+    }
+
+    
+    state = {
+       currentTime: new Date().toLocaleTimeString('en-US', options).toLocaleLowerCase(),
+       currentDate: new Date().toLocaleDateString('en-US', option)
     }
 
    render() {
@@ -35,7 +51,9 @@ export default class ContactUs extends Component {
                      <div className='contact__hours'>
                         <FontAwesomeIcon className='contact__info__icon' icon='clock' />
                         <h1>Office Hours</h1>
-                        <p>Mon-Fri, 8am-5pm(MST)</p>
+                        <p>Mon-Fri, 8am-5pm(MST)<br></br>
+                           It's {this.state.currentTime} on {this.state.currentDate} in Lindon
+                        </p>
                         {/* <p>It's ___ am on ___ in Lindon</p> needs to say current time and day  */}
                      </div>
                      <div className='contact__social'>
@@ -70,6 +88,7 @@ export default class ContactUs extends Component {
                            <input placeholder="Email Address" type='email' />
                            <input placeholder="Phone Number" type='phone' />
                            <input placeholder="Message" type='message' />
+                           <button type="submit">Submit</button>
                         </form>
                      </div>
                   </div>
