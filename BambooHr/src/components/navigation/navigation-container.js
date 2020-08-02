@@ -21,10 +21,10 @@ const NavigationContainer = props => {
                 <a>Why BambooHR</a>
                 </div>
               
-                <NavLink className='nav__menu-item' exact to='/blog'>Blog</NavLink>
-                
+              <NavLink className='nav__menu-item' exact to='/blog'>Blog</NavLink>
               
-                <NavLink className='nav__menu-item' exact to='contact'>Contact</NavLink>
+            
+              <NavLink className='nav__menu-item' exact to='contact'>Contact</NavLink>
               
             
           </div>
