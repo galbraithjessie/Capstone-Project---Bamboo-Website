@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import BlogPost from '../blogComponents/blog-item';
 
 export default class Blog extends Component {
    constructor() {
