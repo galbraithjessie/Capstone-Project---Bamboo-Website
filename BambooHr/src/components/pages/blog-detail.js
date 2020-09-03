@@ -8,14 +8,16 @@ export default class BlogDetail extends Component {
             this.state = {
                 currentId: this.props.match.params.slug,
                 blogItem: {}
-            };   
+            };
+            
     }
 
     getBlogItem() {
         axios.get(`https://flask-backend-capstone.herokuapp.com/blog/${this.state.currentId}`
         ).then(response => {
-            console.log('response', response);
-            
+            this.setState({
+                blogItem: response.data
+            })    
         }).catch(error => {
             console.log('getBlogItem', error);
             
@@ -27,11 +29,16 @@ export default class BlogDetail extends Component {
     }
 
    render() {
-       console.log('current id', this.state.currentId);
-       
+       const {
+           title,
+           content
+       } = this.state.blogItem;
        return(
-          <div>
-              <h1>Blog Detail Page</h1>
+          <div className="blog-detail-container">
+              <div className="detail-content-container">
+                <h1>{title}</h1>
+                <div className="content">{content}</div>
+              </div>
           </div>
        );
    }
