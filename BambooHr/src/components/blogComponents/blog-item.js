@@ -1,26 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
 
-//import axios from 'axios';
+const BlogItem = props => {
+    const {
+        id,
+        title,
+        content
+    } = props.blogItem;
+    
+    return (
+    <div>
+    <Link to={`/b/${id}`}>
+        <h1>{title}</h1>
+    </Link>
+    
+        <div>{content}</div>
+    
+    </div>
+    );
+};
 
-
-export default class BlogPost extends Component {
-    constructor(){
-    super();
-
-    this.state = {
-
-    }
-    };
- 
-    // componentDidMount = () => {
-    //     axios.get('')
-    // }
-
-   render() {
-       return(
-          <div>
-              
-          </div>
-       );
-   }
-}
+export default BlogItem;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-//import BlogPost from '../blogComponents/blog-item';
+import BlogItem from "../blogComponents/blog-item";
 
 class Blog extends Component {
    constructor() {
@@ -30,6 +30,9 @@ class Blog extends Component {
    }
 
    render() {
+      const blogRecords = this.state.blogItems.map(blogItem => {
+         return <BlogItem key={blogItem.id} blogItem={blogItem} />
+      })
        return(
           <div className='blog-container'> 
                <div className="blog-searchbar">
@@ -51,7 +54,10 @@ class Blog extends Component {
                      </div>
                </div>
                
-               <div>Blogs with infinite scrolling</div>
+               {/** Blogs with infinite scrolling */}
+               <div>
+                  {blogRecords}
+               </div>
           </div>
        );
    }
