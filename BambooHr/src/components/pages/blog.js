@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import axios from 'axios';
 //import BlogPost from '../blogComponents/blog-item';
 
-export default class Blog extends Component {
+class Blog extends Component {
    constructor() {
       super();
-   };
 
-   
+      this.state = {
+         blogItems: []
+      }
+
+      this.getBlogItems = this.getBlogItems.bind(this);
+   }
+
+   getBlogItems() {
+      // do , {withCredentials: true} once Authentication is set up.
+      axios.get("https://flask-backend-capstone.herokuapp.com/blogs").then(response => {
+         this.setState({
+            blogItems: response.data
+         })
+      }).catch(error => {
+         console.log('getBlotItems', error);
+      })
+   }
+
+   componentWillMount() {
+      this.getBlogItems();
+   }
 
    render() {
        return(
@@ -35,3 +56,5 @@ export default class Blog extends Component {
        );
    }
 }
+
+export default Blog;

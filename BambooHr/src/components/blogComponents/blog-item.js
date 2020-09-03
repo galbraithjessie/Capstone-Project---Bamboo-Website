@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
+//import axios from 'axios';
 
 
 export default class BlogPost extends Component {
     constructor(){
     super();
+
+    this.state = {
+
+    }
     };
  
     // componentDidMount = () => {
