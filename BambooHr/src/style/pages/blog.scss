@@ -4,6 +4,24 @@
     align-items: center;
     height: 1200px;
     
+    h1 {
+        color: $forestGreen;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+            color: $lightGreen;
+        }
+    }
+
+
+    .blog-searchbar {
+        input {
+            height: 35px;
+            width: 1080px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+    }
 
     .blog-top-blogs {
         display: grid;
@@ -22,10 +40,29 @@
             
 
             h1 {
-                font-size: 18px;
-                color: $lightGray;
+                font-size: 18px; 
                 margin-top: 24px;
             }
+        }
+    }
+
+    .blog-records {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+
+        div {
+            padding-bottom: 30px;
+            h1 {
+                padding-left: 15px;
+                margin-bottom: 15px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.5rem;
         }
     }
 }

@@ -14,9 +14,11 @@ class Blog extends Component {
       this.getBlogItems = this.getBlogItems.bind(this);
    }
 
+
    getBlogItems() {
       // do , {withCredentials: true} once Authentication is set up.
-      axios.get("https://flask-backend-capstone.herokuapp.com/blogs").then(response => {
+      axios.get("https://flask-backend-capstone.herokuapp.com/blogs")
+      .then(response => {
          this.setState({
             blogItems: response.data
          })
@@ -38,6 +40,7 @@ class Blog extends Component {
                <div className="blog-searchbar">
                   <input placeholder="Search Blogs"></input>
                </div>
+               
                {/**top 3 blogs to visible at the top of page smaller thumbnail with partial description**/}
                <div className='blog-top-blogs'>
                      <div className='blog-top-blog'>                       
@@ -55,7 +58,7 @@ class Blog extends Component {
                </div>
                
                {/** Blogs with infinite scrolling */}
-               <div>
+               <div className="blog-records">
                   {blogRecords}
                </div>
           </div>
