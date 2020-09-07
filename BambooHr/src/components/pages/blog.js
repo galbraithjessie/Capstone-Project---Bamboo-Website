@@ -2,18 +2,33 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import BlogItem from "../blogComponents/blog-item";
+import BlogModal from '../modals/blog-modal';
 
 class Blog extends Component {
    constructor() {
       super();
 
       this.state = {
-         blogItems: []
+         blogItems: [],
+         blogModalIsOpen: false
       }
 
       this.getBlogItems = this.getBlogItems.bind(this);
+      this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
+      this.handleModalClose = this.handleModalClose.bind(this);
    }
 
+   handleModalClose() {
+      this.setState({
+         blogModalIsOpen: false
+      });
+   }
+
+   handleNewBlogClick() {
+      this.setState({
+         blogModalIsOpen: true
+      });
+   }
 
    getBlogItems() {
       // do , {withCredentials: true} once Authentication is set up.
@@ -37,6 +52,17 @@ class Blog extends Component {
       })
        return(
           <div className='blog-container'> 
+          <BlogModal  
+          handleModalClose={this.handleModalClose}
+          modalIsOpen={this.state.blogModalIsOpen} />
+
+          <div className="new-blog-link">
+             <a onClick={this.handleNewBlogClick}>
+                Open Modal
+             </a>
+          </div>
+
+
                <div className="blog-searchbar">
                   <input placeholder="Search Blogs"></input>
                </div>
