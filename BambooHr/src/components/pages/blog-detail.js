@@ -33,6 +33,7 @@ export default class BlogDetail extends Component {
            title,
            content
        } = this.state.blogItem;
+       
        return(
           <div className="blog-detail-container">
               <div className="detail-content-container">

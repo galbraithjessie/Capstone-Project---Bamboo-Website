@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FortAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF,faTwitter, faInstagram, faLinkedin, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faMapMarkerAlt, faPhoneAlt, faClock, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 import NavigationContainer from './navigation/navigation-container';
 import FooterContainer from './footer/footer';
@@ -16,12 +13,17 @@ import AboutUs from './pages/about';
 import ContactUs from './pages/contact';
 import SignUp from './pages/signUp';
 import NoMatch from "./pages/no-match";
-
-library.add(faFacebookF, faTwitter, faInstagram, faLinkedin, faYoutube, faMapMarkerAlt, faPhoneAlt, faClock, faCommentAlt);
+import Icons from "../helpers/icons";
 
 import ChatWidget from './widgets/chatWidget';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+
+    Icons();
+  }
   render() {
     return (
       <div className='container'>

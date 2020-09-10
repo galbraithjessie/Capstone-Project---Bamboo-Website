@@ -1,0 +1,15 @@
+.blog-form-wrapper {
+    @include base-grid();
+    grid-template-columns: 1fr;
+    padding: 42px;
+
+
+    @include input-element();
+    
+
+    .btn-modal {
+        @include base-btn();
+        height: 38px;
+        width: 400px;
+    }
+}

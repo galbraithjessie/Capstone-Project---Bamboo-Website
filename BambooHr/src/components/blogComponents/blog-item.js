@@ -8,6 +8,7 @@ const BlogItem = props => {
         content
     } = props.blogItem;
     
+    
     return (
     <div>
     <Link to={`/b/${id}`}>

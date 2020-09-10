@@ -23,6 +23,11 @@ export default class BlogForm extends Component {
             {title: this.state.title, content: this.state.content}
             ).then(response => {
                 this.props.handleSuccessfulFormSubmission(response.data)
+
+                this.setState({
+                    title: "",
+                    content: ""
+                });
             }).catch(error => {
                 console.log('handleSubmit for Blog error', error);
             });
@@ -40,7 +45,7 @@ export default class BlogForm extends Component {
     
    render() {
        return(
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="blog-form-wrapper">
               <input
               type="text" 
               onChange={this.handleChange} 
@@ -59,7 +64,7 @@ export default class BlogForm extends Component {
 
              
 
-              <button>Save</button>
+              <button className="btn-modal">Save</button>
           </form>
        );
    }

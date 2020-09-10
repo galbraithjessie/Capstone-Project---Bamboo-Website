@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import BlogItem from "../blogComponents/blog-item";
 import BlogModal from '../modals/blog-modal';
+import { FortAwesomeIcon, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Blog extends Component {
    constructor() {
@@ -16,6 +17,14 @@ class Blog extends Component {
       this.getBlogItems = this.getBlogItems.bind(this);
       this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
       this.handleModalClose = this.handleModalClose.bind(this);
+      this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(this);
+   }
+
+   handleSuccessfulNewBlogSubmission(blog) {
+      this.setState ({
+         blogModalIsOpen: false,
+         blogItems: [blog].concat(this.state.blogItems)
+      });
    }
 
    handleModalClose() {
@@ -29,7 +38,7 @@ class Blog extends Component {
          blogModalIsOpen: true
       });
    }
-
+  
    getBlogItems() {
       // do , {withCredentials: true} once Authentication is set up.
       axios.get("https://flask-backend-capstone.herokuapp.com/blogs")
@@ -47,18 +56,21 @@ class Blog extends Component {
    }
 
    render() {
-      const blogRecords = this.state.blogItems.map(blogItem => {
+            // creates an array to map over and put in descending order.
+      const blogRecords = [].concat(this.state.blogItems).sort((a,b) => b.id - a.id).map(blogItem => {  
          return <BlogItem key={blogItem.id} blogItem={blogItem} />
       })
+
        return(
           <div className='blog-container'> 
           <BlogModal  
+          handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
           handleModalClose={this.handleModalClose}
           modalIsOpen={this.state.blogModalIsOpen} />
 
           <div className="new-blog-link">
              <a onClick={this.handleNewBlogClick}>
-                Open Modal
+                <FontAwesomeIcon icon="plus-circle" />
              </a>
           </div>
 
@@ -67,7 +79,7 @@ class Blog extends Component {
                   <input placeholder="Search Blogs"></input>
                </div>
                
-               {/**top 3 blogs to visible at the top of page smaller thumbnail with partial description**/}
+               {/**top 3 blogs to visible at the top of page smaller thumbnail **/}
                <div className='blog-top-blogs'>
                      <div className='blog-top-blog'>                       
                         <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/>
