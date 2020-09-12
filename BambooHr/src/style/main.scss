@@ -1,6 +1,10 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './button.scss';
+@import './grid.scss';
+
+//rich text editor base styles
+@import './react-draft-wysiwyg.scss';
 
 //footer and navigation
 @import './navigation/navigation-container.scss';

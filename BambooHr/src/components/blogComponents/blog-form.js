@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
- 
+
+import RichTextEditor from '../forms/rich-text-editor';
+
 export default class BlogForm extends Component {
     constructor(props) {
         super(props);
@@ -12,11 +14,14 @@ export default class BlogForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRichTextEditorChange = this.handleRichTextEditorChange.bind(this);
     }
 
+    handleRichTextEditorChange(content) {
+        this.setState({ content });
+    }
 
     handleSubmit(event) {
-        
                     // add auth as a third argument on this after buildForm do withCredentials: true
         axios.post(
             "https://flask-backend-capstone.herokuapp.com/blog", 
@@ -54,15 +59,12 @@ export default class BlogForm extends Component {
               value={this.state.title}
                />
 
-              <input
-              type="text" 
-              onChange={this.handleChange} 
-              name="content"
-              placeholder="Blog Content"
-              value={this.state.content}
-               />
+<              div className="one-column">
+                 <RichTextEditor 
+                  handleRichTextEditorChange={this.handleRichTextEditorChange}
+                 />
+               </div>
 
-             
 
               <button className="btn-modal">Save</button>
           </form>
