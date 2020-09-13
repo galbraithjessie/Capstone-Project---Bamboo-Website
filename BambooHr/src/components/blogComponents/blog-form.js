@@ -8,6 +8,7 @@ export default class BlogForm extends Component {
         super(props);
 
         this.state = {
+            id: "",
             title: "",
             content: ""
         }
@@ -15,6 +16,15 @@ export default class BlogForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleRichTextEditorChange = this.handleRichTextEditorChange.bind(this);
+    }
+
+    componentWillMount() {
+        if (this.props.editMode) {
+            this.setState({
+                id: this.props.blog.id,
+                title: this.props.blog.title    
+            });
+        }
     }
 
     handleRichTextEditorChange(content) {
@@ -27,12 +37,12 @@ export default class BlogForm extends Component {
             "https://flask-backend-capstone.herokuapp.com/blog", 
             {title: this.state.title, content: this.state.content}
             ).then(response => {
-                this.props.handleSuccessfulFormSubmission(response.data)
-
                 this.setState({
                     title: "",
                     content: ""
                 });
+
+                this.props.handleSuccessfulFormSubmission(response.data); 
             }).catch(error => {
                 console.log('handleSubmit for Blog error', error);
             });

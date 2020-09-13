@@ -5,6 +5,11 @@
 
 
     @include input-element();
+    
+    input {
+        width: 30%;
+        font-size: 2em;
+    }
 
     .ReactModal__Content, .ReactModal__Content--after-open {
         height: 80%;

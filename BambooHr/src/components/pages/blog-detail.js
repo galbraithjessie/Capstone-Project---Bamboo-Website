@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import HtmlParser from 'react-html-parser';
+
+import BlogForm from '../blogComponents/blog-form';
  
 export default class BlogDetail extends Component {
     constructor(props) {
@@ -7,9 +10,15 @@ export default class BlogDetail extends Component {
 
             this.state = {
                 currentId: this.props.match.params.slug,
-                blogItem: {}
+                blogItem: {},
+                editMode: false
             };
             
+        this.handleEditClick = this.handleEditClick.bind(this);
+    }
+
+    handleEditClick() {
+        this.setState({ editMode: true }); 
     }
 
     getBlogItem() {
@@ -17,10 +26,9 @@ export default class BlogDetail extends Component {
         ).then(response => {
             this.setState({
                 blogItem: response.data
-            })    
+            })                
         }).catch(error => {
-            console.log('getBlogItem', error);
-            
+            console.log('getBlogItem', error);    
         });
     }
 
@@ -33,13 +41,27 @@ export default class BlogDetail extends Component {
            title,
            content
        } = this.state.blogItem;
+
+       const contentManager = () => {
+           if (this.state.editMode) {
+               return <BlogForm 
+               editMode={this.state.editMode} 
+               blog={this.state.blogItem}
+               />
+           } else {
+              return (
+              <div className="detail-content-container">
+                <h1 onClick={this.handleEditClick}>{title}</h1>
+
+                <div className="content">{HtmlParser(content)}</div>
+              </div> 
+            );
+           }
+       };
        
        return(
           <div className="blog-detail-container">
-              <div className="detail-content-container">
-                <h1>{title}</h1>
-                <div className="content">{content}</div>
-              </div>
+              {contentManager()}
           </div>
        );
    }

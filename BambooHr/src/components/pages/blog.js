@@ -57,8 +57,8 @@ class Blog extends Component {
 
    render() {
             // creates an array to map over and put in descending order.
-      const blogRecords = [].concat(this.state.blogItems).sort((a,b) => b.id - a.id).map(blogItem => {  
-         return <BlogItem key={blogItem.id} blogItem={blogItem} />
+      const blogRecords = [].concat(this.state.blogItems).sort((a,b) => b.id - a.id).map(blogItem => { 
+         return <BlogItem key={blogItem.id} blogItem={blogItem} /> 
       })
 
        return(
