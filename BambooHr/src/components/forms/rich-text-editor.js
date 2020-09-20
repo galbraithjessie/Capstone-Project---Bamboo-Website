@@ -3,8 +3,9 @@ import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
+import { withOktaAuth } from '@okta/okta-react';
  
-export default class RichTextEditor extends Component {
+export default withOktaAuth(class RichTextEditor extends Component {
     constructor(props) {
         super(props);
 
@@ -37,9 +38,10 @@ export default class RichTextEditor extends Component {
 
 
    render() {
-       return(
-          <div>
-              <Editor
+        const textEditorManager = () => {
+            if (this.props.authState.isAuthenticated) {
+                return (
+                    <Editor
                 editorState={this.state.editorState}
                 wrapperClassName="demo-wrapper"
                 editorClassName="demo-editor"
@@ -52,7 +54,16 @@ export default class RichTextEditor extends Component {
                     history: { inDropdown: true }
                 }}
                />
+                )
+            } else {
+                return null;
+            }
+        }
+
+       return(
+          <div>
+              {textEditorManager()}
           </div>
        );
    }
-}
+});

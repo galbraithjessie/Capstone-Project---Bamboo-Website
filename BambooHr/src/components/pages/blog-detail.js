@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import HtmlParser from 'react-html-parser';
+import { withOktaAuth } from '@okta/okta-react';
 
 import BlogForm from '../blogComponents/blog-form';
  
-export default class BlogDetail extends Component {
+export default withOktaAuth(class BlogDetail extends Component {
     constructor(props) {
         super(props);
 
@@ -43,7 +44,7 @@ export default class BlogDetail extends Component {
        } = this.state.blogItem;
 
        const contentManager = () => {
-           if (this.state.editMode) {
+           if (this.state.editMode && this.props.authState.isAuthenticated) {
                return <BlogForm 
                editMode={this.state.editMode} 
                blog={this.state.blogItem}
@@ -65,4 +66,4 @@ export default class BlogDetail extends Component {
           </div>
        );
    }
-}
+});

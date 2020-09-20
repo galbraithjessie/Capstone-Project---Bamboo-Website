@@ -10,9 +10,8 @@ export default withOktaAuth(class LogIn extends Component {
     super(props);
     this.onSuccess = this.onSuccess.bind(this);
     this.onError = this.onError.bind(this);
-    
     this.state = {
-      authState
+    authState
     }
   }
 
@@ -33,8 +32,8 @@ export default withOktaAuth(class LogIn extends Component {
   }
 
   render() {
-      //const { authState, authService } = useOktaAuth();
-    if (this.props.authState.isPending) return null;
+      
+    //if (this.props.authState.isPending) return null;
 
     return this.props.authState.isAuthenticated ?
       <Redirect to={{ pathname: '/' }}/> :

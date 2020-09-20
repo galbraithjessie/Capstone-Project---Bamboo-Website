@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
-import BlogItem from "../blogComponents/blog-item";
-import BlogModal from '../modals/blog-modal';
+import { withOktaAuth } from '@okta/okta-react';
 import { FortAwesomeIcon, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class Blog extends Component {
+
+import BlogItem from "../blogComponents/blog-item";
+import BlogModal from '../modals/blog-modal';
+
+
+export default withOktaAuth(class Blog extends Component {
    constructor() {
       super();
 
@@ -59,7 +62,19 @@ class Blog extends Component {
             // creates an array to map over and put in descending order.
       const blogRecords = [].concat(this.state.blogItems).sort((a,b) => b.id - a.id).map(blogItem => { 
          return <BlogItem key={blogItem.id} blogItem={blogItem} /> 
-      })
+      });
+
+      const modalButton = () => {
+         if (this.props.authState.isAuthenticated) {
+             return (
+               <a onClick={this.handleNewBlogClick}>
+                  <FontAwesomeIcon icon="plus-circle" />
+               </a>
+             )
+         } else {
+            return null;
+         }
+      };
 
        return(
           <div className='blog-container'> 
@@ -69,9 +84,7 @@ class Blog extends Component {
           modalIsOpen={this.state.blogModalIsOpen} />
 
           <div className="new-blog-link">
-             <a onClick={this.handleNewBlogClick}>
-                <FontAwesomeIcon icon="plus-circle" />
-             </a>
+             {modalButton()}
           </div>
 
 
@@ -102,6 +115,4 @@ class Blog extends Component {
           </div>
        );
    }
-}
-
-export default Blog;
+});
