@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { AuthService, Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
 import NavigationContainer from './navigation/navigation-container';
 import FooterContainer from './footer/footer';
 import Home from './pages/home';
-import LogIn from './pages/logIn';
+import LogIn from './auth/logIn';
 import Packaging from './pages/packaging';
 import Blog from './pages/blog';
 import BlogDetail from './pages/blog-detail';
@@ -36,7 +36,7 @@ export default class App extends Component {
                 <Route exact path="/" component={Home} />
 
                 <Route exact path="/packages" component={Packaging} />
-                <Route exact path="/lognin" component={LogIn} />
+                <Route exact path="/login" component={LogIn} />
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/blog" component={Blog} />
                 <Route exact path="/b/:slug" component={BlogDetail} />

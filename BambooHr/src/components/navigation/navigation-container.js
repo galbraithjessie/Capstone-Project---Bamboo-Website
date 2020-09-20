@@ -29,7 +29,9 @@ const NavigationContainer = props => {
             
           </div>
           <div className='right-nav'>
-            <button className='btn login'>Log In</button>
+
+            <NavLink className='btn login' exact to='login'>Log In</NavLink>
+
             <button className='btn try'>Try it Free</button>
           </div>
       </div>

@@ -15,7 +15,7 @@
         }
 
         .content {
-            height: 600px;
+            height: min($numbers: 600px);
         }
     }
 }

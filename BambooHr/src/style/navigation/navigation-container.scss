@@ -57,6 +57,11 @@
         padding-right: 110px;
 
         .login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            text-decoration: none;
             width: 93px;
             font-size: 12px;
             font-weight: 600;
