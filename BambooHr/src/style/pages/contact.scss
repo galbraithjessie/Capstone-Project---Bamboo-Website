@@ -37,19 +37,15 @@
             .social__icon {
                 @include base-icon();
             }
-            .contact__address {
-               
-            }
-            .contact__phone {
-
-            }
-            .contact__hours {
-
-            }
             .contact__social {
                 font-family: Font Awesome\ 5 Free;
                 font-weight: 400;
                 font-size: 28px;
+                
+                .social__icon {
+                    margin-right: 15px;
+                }
+                
             }
         
         }
@@ -70,6 +66,29 @@
                 font-size: 16px;
                 border-radius: 3px;
                 line-height: 30px;
+
+                .btn {
+                    height: 30px;
+                    width: 90px;
+                    margin-top: 15px;
+                }
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    
+
+                    input {
+                        height: 30px;
+                        border-radius: 3px;
+                    }
+
+                    textarea {
+                        border-radius: 3px;
+                    }
+
+                   
+                }
                    
             }
         }

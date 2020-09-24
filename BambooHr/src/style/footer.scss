@@ -114,6 +114,18 @@
                 grid-column: subscribe-s/subscribe-e;
                 grid-row: s/e;
                 width: 400px;
+                
+                input {
+                    border-radius: 30px;
+                    height: 30px;
+                    width: 180px;
+                    border: none;
+                }
+                button {
+                    @include base-btn();
+                    height: 30px;
+                    width: 80px;
+                }
             }
             
         }

@@ -82,9 +82,18 @@
             }
         }
         .try {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            text-decoration: none;
             width: 110px;
             height: 34px;
             font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .5px;
+            line-height: 15px;
+            padding: 8px 0;
 
             &:hover {
                 border: 2px solid $lightGreen;

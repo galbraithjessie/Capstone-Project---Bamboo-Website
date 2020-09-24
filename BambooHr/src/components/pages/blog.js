@@ -86,11 +86,6 @@ export default withOktaAuth(class Blog extends Component {
           <div className="new-blog-link">
              {modalButton()}
           </div>
-
-
-               <div className="blog-searchbar">
-                  <input placeholder="Search Blogs"></input>
-               </div>
                
                {/**top 3 blogs to visible at the top of page smaller thumbnail **/}
                <div className='blog-top-blogs'>

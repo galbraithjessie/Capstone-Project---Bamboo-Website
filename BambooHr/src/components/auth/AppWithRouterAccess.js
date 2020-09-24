@@ -8,8 +8,8 @@ import Blog from '../pages/blog';
 import BlogDetail from '../pages/blog-detail';
 import AboutUs from '../pages/about';
 import ContactUs from '../pages/contact';
-import SignUp from '../pages/signUp';
 import NoMatch from "../pages/no-match";
+import TryItFree from '../pages/tryitfree';
 
 
 
@@ -37,6 +37,7 @@ export default withRouter(class AppWithRouterAccess extends Component {
                     clientId='{0oa10lk9y16ISE6SY4x7}'
                     redirectUri={window.location.origin + '/implicit/callback'}
                     onAuthRequired={this.onAuthRequired} 
+                    pkce={true}
                     >
                     
 
@@ -44,9 +45,10 @@ export default withRouter(class AppWithRouterAccess extends Component {
                 <Route exact path="/" component={Home} />
 
                 <Route path='/login' render={() => <LogIn baseUrl='https://dev-131285.okta.com' />} />
+                <Route path='/tryitfree' component={TryItFree} />
                 <Route path='/implicit/callback' component={LoginCallback} />
 
-                <Route path="/signup" component={SignUp} />
+                {/* <Route path="/signup" component={SignUp} /> */}
                 <Route path="/blog" component={Blog} />
                 <Route path="/b/:slug" component={BlogDetail} />
                 <Route path="/about" component={AboutUs} />

@@ -32,7 +32,7 @@ const NavigationContainer = props => {
 
             <NavLink className='btn login' exact to='login'>Log In</NavLink>
 
-            <button className='btn try'>Try it Free</button>
+            <NavLink className='btn try' exact to='tryitfree'>Try it Free</NavLink>
           </div>
       </div>
     );

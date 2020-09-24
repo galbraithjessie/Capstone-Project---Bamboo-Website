@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
  
-export default class SignUp extends Component {
+export default class TryItFree extends Component {
    render() {
        return(
           <div>

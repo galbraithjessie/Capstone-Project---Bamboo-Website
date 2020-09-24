@@ -48,7 +48,11 @@ export default class FooterContainer extends Component {
                     <div className='footer-right'>
                         <div className='footer-subscribe'>
                             <h1>Subscribe to our Newsletter</h1>
-                            <button>Submit</button>
+                            <form>
+                                <input type='text' placeholder='  email'></input>
+                                <button>Submit</button>
+                            </form>
+                            
                         </div>
 
                          
@@ -58,9 +62,6 @@ export default class FooterContainer extends Component {
 
                 </div>
                 <div className='footer-wrapper-middle'>
-                    <div className='footer-wrapper-middle__social'>
-                        Social media Icons
-                    </div>
                     <div className="footer-wrapper-middle__copy-right">
                         © 2020 My Content LLC. All Rights Reserved. My Content® is a registered trademark of My Content LLC
                     </div>
