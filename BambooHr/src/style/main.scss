@@ -12,12 +12,15 @@
 @import './footer.scss';
 
 //pages
+@import './pages/about.scss';
 @import './pages/home.scss';
 @import './pages/packaging.scss';
 @import './pages/contact.scss';
 @import './pages/blog.scss';
 @import './pages/blog-detail.scss';
 @import './pages/login.scss';
+@import './pages/software.scss';
+@import './pages/tryitfree.scss';
 
 //Modals
 @import './blogModal.scss';

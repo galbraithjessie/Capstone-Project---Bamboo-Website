@@ -1,0 +1,15 @@
+.about-container {
+    @include basic-container-flexbox();
+
+    .about-wrapper {
+        @include basic-wrapper-flexbox();
+
+        .about-player {
+            margin-right: 30px;
+        }
+
+        .about-content {
+            @include paragraph-element();
+        }
+    }
+}

@@ -14,16 +14,9 @@ const NavigationContainer = props => {
                 backgroundImage: `url(${bambooLogo})`
             }} /> 
             
-              <div className='nav__menu-item'>
-                <a>Our Software</a>
-                </div>
-              <div className='nav__menu-item'>
-                <a>Why BambooHR</a>
-                </div>
-              
+              <NavLink className='nav__menu-item' exact to='/software'>Our Software</NavLink>
+              <NavLink className='nav__menu-item' exact to='/about'>Why BambooHR</NavLink>  
               <NavLink className='nav__menu-item' exact to='/blog'>Blog</NavLink>
-              
-            
               <NavLink className='nav__menu-item' exact to='contact'>Contact</NavLink>
               
             

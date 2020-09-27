@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -40,14 +41,39 @@ export default class ContactUs extends Component {
                      </div>
                      <div className='contact__social'>
                         <FontAwesomeIcon className='contact__info__icon' icon='comment-alt' />
-                        <h1>Social</h1>                        
-                        <FontAwesomeIcon className='social__icon' icon={faFacebookF}/>
-                        <FontAwesomeIcon className='social__icon' icon={faTwitter}/>
-                        <FontAwesomeIcon className='social__icon' icon={faInstagram}/>
+                        <h1>Social</h1>
+                        
+                        <a href="https://www.facebook.com/bamboohr" 
+                        target="_blank" 
+                        rel="noopener noreferrer" >
+                           <FontAwesomeIcon className='social__icon' icon={faFacebookF}/>
+                        </a>                        
+                        
+                        <a href="https://twitter.com/bamboohr" 
+                        target="_blank" 
+                        rel="noopener noreferrer" >
+                           <FontAwesomeIcon className='social__icon' icon={faTwitter}/></a>
+                        
+                        <a href="https://www.instagram.com/bamboohr/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" >
+                           <FontAwesomeIcon className='social__icon' icon={faInstagram}/>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/bamboohr/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" >
                         <FontAwesomeIcon className='social__icon' icon={faLinkedin}/>
-                        <FontAwesomeIcon className='social__icon' icon={faYoutube}/>                      
+                        </a>
+
+                        <a href="https://www.youtube.com/user/bamboohr" 
+                        target="_blank" 
+                        rel="noopener noreferrer" >
+                           <FontAwesomeIcon className='social__icon' icon={faYoutube}/>
+                        </a>                   
                      </div>
                   </div>
+
                   <div className='contact-form'>
                      <div className='contact-form__map'>
                         <GoogleMapReact

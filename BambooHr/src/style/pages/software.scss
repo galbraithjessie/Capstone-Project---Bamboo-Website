@@ -1,0 +1,15 @@
+.software-container {
+    @include basic-container-flexbox();
+
+    .software-wrapper {
+        @include basic-wrapper-flexbox();
+
+        .software-player {
+
+        }
+
+        .software-content {
+            @include paragraph-element();
+        }
+    }
+}

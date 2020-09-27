@@ -1,0 +1,31 @@
+.tryitfree-container {
+    @include basic-container-flexbox();
+    .tryitfree-wrapper {
+        @include basic-wrapper-flexbox();
+
+        .tryitfree-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 60px;
+            height: 480px;
+            width: 520px;
+            font-weight: 600;
+            
+            border-radius: 10px;
+            background-color: white;
+            @include base-from-element();
+
+            h1 {
+                padding-left: 30px;
+            }
+            p {
+                padding-left: 30px; 
+            }
+            
+            .tryitfree-form__form {
+                padding-left: 30px;
+            }
+        }
+    }
+}

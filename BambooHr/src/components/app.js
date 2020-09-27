@@ -8,6 +8,7 @@ import BlogDetail from './pages/blog-detail';
 import AboutUs from './pages/about';
 import ContactUs from './pages/contact';
 import NoMatch from "./pages/no-match";
+import OurSoftware from './pages/our-software';
 import TryItFree from './pages/tryitfree';
 import NavigationContainer from './navigation/navigation-container';
 import FooterContainer from './footer/footer';
@@ -33,10 +34,8 @@ export default class App extends Component {
                 <Route exact path="/" component={Home} />
 
                 <Route path='/login' component={LogIn}/>
-                <Route path='/tryitfree' component={TryItFree} />
-            
-
-
+                <Route path='/tryitfree' component={TryItFree} /> 
+                <Route path="/software" component={OurSoftware} />
                 <Route path="/blog" component={Blog} />
                 <Route path="/b/:slug" component={BlogDetail} />
                 <Route path="/about" component={AboutUs} />
