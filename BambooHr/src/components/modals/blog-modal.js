@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 
 import BlogForm from '../blogComponents/blog-form';
-import { withOktaAuth } from '@okta/okta-react';
 
 ReactModal.setAppElement(".app-wrapper");
 
-export default withOktaAuth(class BlogModal extends Component {
+export default class BlogModal extends Component {
     constructor(props) {
         super(props);
 
@@ -33,30 +32,16 @@ export default withOktaAuth(class BlogModal extends Component {
     }
 
    render() {
-    if (this.props.authState.isPending) return null;
+        return (
+            <ReactModal 
+                style={this.customStyles}
+                onRequestClose={() => {
+                this.props.handleModalClose();
+                }} isOpen={this.props.modalIsOpen}
+                >
 
-    const contentManager = () => {
-        if (this.props.authState.isAuthenticated) {
-            return (
-                <ReactModal 
-                    style={this.customStyles}
-                    onRequestClose={() => {
-                    this.props.handleModalClose();
-                    }} isOpen={this.props.modalIsOpen}
-                    >
-
-                    <BlogForm handleSuccessfulFormSubmission={this.handleSuccessfulFormSubmission} />
-                </ReactModal>
-            );
-        } else {
-            return null;
-        }
-     };
-
-       return( 
-            <div>
-                {contentManager()}  
-            </div>        
-       );
+                <BlogForm handleSuccessfulFormSubmission={this.handleSuccessfulFormSubmission} />
+            </ReactModal>
+        );
    }
-});
+};

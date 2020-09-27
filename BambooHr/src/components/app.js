@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
+import Home from './pages/home';
+import LogIn from './auth/login';
+import Blog from './pages/blog';
+import BlogDetail from './pages/blog-detail';
+import AboutUs from './pages/about';
+import ContactUs from './pages/contact';
+import NoMatch from "./pages/no-match";
+import TryItFree from './pages/tryitfree';
 import NavigationContainer from './navigation/navigation-container';
 import FooterContainer from './footer/footer';
-import AppWithRouterAccess from './auth/AppWithRouterAccess'
 import Icons from "../helpers/icons";
 
 import ChatWidget from './widgets/chatWidget';
-
 
 
 export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.onAuthRequired = this.onAuthRequired.bind(this);
-
     Icons();
   } 
-
-  onAuthRequired({history}) {
-    history.push('/login')
-  }
 
   render() {
     return (
@@ -30,8 +29,25 @@ export default class App extends Component {
         <Router>
           <div>
           <NavigationContainer />
+          <Switch>
+                <Route exact path="/" component={Home} />
+
+                <Route path='/login' component={LogIn}/>
+                <Route path='/tryitfree' component={TryItFree} />
+            
+
+
+                <Route path="/blog" component={Blog} />
+                <Route path="/b/:slug" component={BlogDetail} />
+                <Route path="/about" component={AboutUs} />
+                <Route path="/contact" component={ContactUs} />
+                
+
+                <Route component={NoMatch} />
+                </Switch>
+
+            
             <ChatWidget />
-            <AppWithRouterAccess />
             <FooterContainer />
           </div>
         </Router>

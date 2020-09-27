@@ -1,0 +1,59 @@
+//portrait 
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+
+    //nav bar
+
+    //home page
+    .home-container {
+        height: 812px;    
+        background: $backGround;
+        background-repeat: no-repeat;
+        background-size: auto;
+    
+        display: grid;
+        align-items: inherit;
+        justify-items: center;
+        grid-template-columns: 1fr;
+    
+        .home-title {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            color: $white;
+            font-size: 10em;
+            font-weight: 600;
+        }
+    
+        .home-video {
+            margin-top: -40px;
+            
+        }
+    
+        .btn {
+           height: 48px;
+           width: 180px;
+           transition: 0.3s ease-in-out; 
+           
+           &:hover {
+               border: 2px solid $forestGreen;
+               background-color: $forestGreen;
+    
+           }
+        }
+    }
+
+    //youtube video sizing mobile
+
+}
+
+@media (min-width: 768px) and (max-width: 950px) {
+
+}
+
+
+
+
+
+
+
+
