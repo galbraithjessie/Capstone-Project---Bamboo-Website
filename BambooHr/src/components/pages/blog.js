@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withOktaAuth } from '@okta/okta-react';
 import { FortAwesomeIcon, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -8,7 +7,7 @@ import BlogItem from "../blogComponents/blog-item";
 import BlogModal from '../modals/blog-modal';
 
 
-export default withOktaAuth(class Blog extends Component {
+export default class Blog extends Component {
    constructor() {
       super();
 
@@ -64,27 +63,18 @@ export default withOktaAuth(class Blog extends Component {
          return <BlogItem key={blogItem.id} blogItem={blogItem} /> 
       });
 
-      const modalButton = () => {
-         if (this.props.authState.isAuthenticated) {
-             return (
-               <a onClick={this.handleNewBlogClick}>
-                  <FontAwesomeIcon icon="plus-circle" />
-               </a>
-             )
-         } else {
-            return null;
-         }
-      };
-
        return(
           <div className='blog-container'> 
+            
           <BlogModal  
           handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
           handleModalClose={this.handleModalClose}
           modalIsOpen={this.state.blogModalIsOpen} />
 
           <div className="new-blog-link">
-             {modalButton()}
+            <a onClick={this.handleNewBlogClick}>
+                  <FontAwesomeIcon icon="plus-circle" />
+            </a>
           </div>
                
                {/**top 3 blogs to visible at the top of page smaller thumbnail **/}
@@ -110,4 +100,4 @@ export default withOktaAuth(class Blog extends Component {
           </div>
        );
    }
-});
+};
