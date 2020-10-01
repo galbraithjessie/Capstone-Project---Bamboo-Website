@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withRouter } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ const NavigationContainer = props => {
     
     return (
       <div className='nav-wrapper'>
+          <i className=""><FontAwesomeIcon className='nav-icon' icon='bars' /></i>
           <div className='left-nav'>
             <NavLink exact to='/' className='nav-logo' style={{
                 backgroundImage: `url(${bambooLogo})`

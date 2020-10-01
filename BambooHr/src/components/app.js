@@ -10,7 +10,7 @@ import ContactUs from './pages/contact';
 import NoMatch from "./pages/no-match";
 import OurSoftware from './pages/our-software';
 import TryItFree from './pages/tryitfree';
-import NavigationContainer from './navigation/navigation-container';
+import Navbar from './navigation/navigation-container';
 import FooterContainer from './footer/footer';
 import Icons from "../helpers/icons";
 
@@ -26,10 +26,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='app-container'>
         <Router>
           <div>
-          <NavigationContainer />
+          <Navbar />
           <Switch>
                 <Route exact path="/" component={Home} />
 

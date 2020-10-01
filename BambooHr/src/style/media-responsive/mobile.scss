@@ -1,7 +1,22 @@
 //portrait 
 @media only screen and (min-width: 300px) and (max-width: 767px) {
+    //app
+    .app-container {
+        @include fit-content();
+    }
 
     //nav bar
+    .nav-wrapper {
+        display: flex;
+        @include fit-content();
+
+
+        .nav-icon {
+            display: flex;
+            font-size: 700%;
+            
+        }
+    }
 
     //home page
     .home-container {
@@ -25,8 +40,9 @@
         }
     
         .home-video {
-            margin-top: -40px;
-            
+            @include fit-content();
+            margin-top: 20px;
+            height: 600px;
         }
     
         .btn {
@@ -42,7 +58,98 @@
         }
     }
 
-    //youtube video sizing mobile
+    //software page
+    .software-container {
+        @include base-flex-column();
+        @include fit-content();
+        margin: 0;
+        padding: 0;
+        
+
+        .software-wrapper {
+            @include base-flex-column();
+            @include fit-content();
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            .software-player {
+                div {
+                    @include base-flex-column();
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 15px;
+                    iframe {
+                        @include fit-content();
+                    }
+                }
+            }
+
+            .software-content {
+                display: flex;
+                @include fit-content();
+                text-overflow: wrap;
+                padding: 15px;
+                margin: 20px;
+                border: 6px solid $forestGreen;
+                width: 360px;
+                p {
+                    @include fit-content();
+                    text-overflow: wrap;
+                    font-size: 180%;
+                }
+            }
+        }
+    }
+
+    //footer
+    .footer {
+        @include base-flex-column();
+        justify-content: center;
+        align-items: center;
+        @include fit-content();
+        background-size: cover;
+        .footer-container {
+            @include base-flex-column();
+            justify-content: center;
+            align-items: center;
+            @include fit-content();
+            .footer-wrapper-top {
+                @include base-flex-column();
+                justify-content: center;
+                align-items: center;
+                .footer-left {
+                    display: flex;
+                    flex-direction: column;
+                    @include fit-content();
+                    
+                    .footer-left-links {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 7px;
+                        padding: 7px;
+                        .footer-left-links__left {
+
+                        }
+                        .footer-left-links__right {
+
+                        }
+                    }
+                }
+                .footer-right {
+                   
+                }
+            } 
+            .footer-wrapper-middle {
+                .footer-wrapper-middle__copy-right{
+                    text-overflow: wrap;
+                }
+            }
+               
+        }
+    }
 
 }
 

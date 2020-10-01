@@ -61,14 +61,13 @@ export default class FooterContainer extends Component {
                     </div>
 
                 </div>
+
                 <div className='footer-wrapper-middle'>
                     <div className="footer-wrapper-middle__copy-right">
                         © 2020 My Content LLC. All Rights Reserved. My Content® is a registered trademark of My Content LLC
                     </div>
                 </div>
-                <div className='footer-wrapper-bottom'>
-
-                </div>
+                
           </div>
         </div>
        );
