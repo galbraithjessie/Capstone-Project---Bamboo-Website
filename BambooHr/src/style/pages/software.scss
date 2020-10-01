@@ -4,11 +4,8 @@
     .software-wrapper {
         @include basic-wrapper-flexbox();
 
-        .software-player {
-
-        }
-
         .software-content {
+            border: 4px solid $forestGreen;
             @include paragraph-element();
         }
     }

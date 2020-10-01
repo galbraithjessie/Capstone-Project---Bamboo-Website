@@ -10,7 +10,9 @@
         width: 600px;
         background-image: $backGround;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+        border: 6px solid $forestGreen;
+        border-radius: 15px;
         margin-right: 30px;
     }
     
@@ -18,12 +20,17 @@
     .login-form {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         color: #394130;
-        padding: 0 110px 0 20px;
+        font-weight: 600;
+        padding: 15px 110px 0 20px;
         font-size: 16px;
         border-radius: 3px;
         line-height: 30px;
 
+        label {
+            font-size: 2rem;
+        }
 
         input {
             height: 32px;

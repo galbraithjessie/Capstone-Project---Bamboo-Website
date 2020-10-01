@@ -9,6 +9,7 @@
         }
 
         .about-content {
+            border: 4px solid $forestGreen;
             @include paragraph-element();
         }
     }

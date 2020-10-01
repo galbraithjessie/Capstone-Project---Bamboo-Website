@@ -11,8 +11,8 @@
             height: 480px;
             width: 520px;
             font-weight: 600;
-            
-            border-radius: 10px;
+            border: 4px solid $forestGreen;
+            border-radius: 15px;
             background-color: white;
             @include base-from-element();
 
