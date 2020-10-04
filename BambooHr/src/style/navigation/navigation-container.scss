@@ -1,3 +1,9 @@
+
+
+.nav-dropdown {    
+    display: none;
+}
+
 .nav-wrapper {
     display: flex;
     overflow: hidden;
@@ -5,103 +11,101 @@
     width: 100%;
     background: $white;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-
-    .nav-icon {
-        display: none;
-    }
-
-    .left-nav {
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        padding-left: 6%;
-        font-size: 14px;
-        font-weight: 600;
-        color: $lightGray;
-
-      
-            
-        .nav__menu-item {
-            @include base-flex-column();
-            padding-left: 4%;
-            padding-right: 3%;
-            width: fit-content;
-            height: 69px;
+  
+        .left-nav {
+            flex-grow: 1;
+            display: flex;
             align-items: center;
-            justify-content: center;
+            padding-left: 6%;
             font-size: 14px;
             font-weight: 600;
-            color: #9ca393;
-            text-decoration: none;
-            
-            background-color: $white;
+            color: $lightGray;
 
-                &:hover {
-                    color: $lightGreen;
-
-                }
-        }
         
+                
+            .nav__menu-item {
+                @include base-flex-column();
+                padding-left: 4%;
+                padding-right: 3%;
+                width: fit-content;
+                height: 69px;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: 600;
+                color: #9ca393;
+                text-decoration: none;
+                
+                background-color: $white;
 
-        .nav-logo {
-            align-items: flex-end;
-            background-size: contain;
-            height: 22px;
-            width: 150px;
-        }
-        
-    }
+                    &:hover {
+                        color: $lightGreen;
 
-    .right-nav {
-        flex-grow: 2;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: 110px;
-
-        .login {
-            @include base-flex-column();
-            align-items: center;
-            align-content: center;
-            text-decoration: none;
-            width: 93px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .5px;
-            line-height: 15px;
-            padding: 8px 0;
-            margin-right: 15px;
-
-
-            border: 2px solid $lightGreen;
-            background-color: transparent;
-            color: $lightGreen; 
-            
-            &:hover {
-            border: 2px solid $lightGreen;
-            background-color: $lightGreen;
-            color: $white; 
+                    }
             }
-        }
-        .try {
-            @include base-flex-column();
-            align-content: center;
-            align-items: center;
-            text-decoration: none;
-            width: 110px;
-            height: 34px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .5px;
-            line-height: 15px;
-            padding: 8px 0;
+            
 
-            &:hover {
+            .nav-logo {
+                align-items: flex-end;
+                background-size: contain;
+                height: 22px;
+                width: 150px;
+            }
+            
+        }
+
+        .right-nav {
+            flex-grow: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 110px;
+
+            .login {
+                @include base-flex-column();
+                align-items: center;
+                align-content: center;
+                text-decoration: none;
+                width: 93px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .5px;
+                line-height: 15px;
+                padding: 8px 0;
+                margin-right: 15px;
+
+
                 border: 2px solid $lightGreen;
                 background-color: transparent;
                 color: $lightGreen; 
+                
+                &:hover {
+                border: 2px solid $lightGreen;
+                background-color: $lightGreen;
+                color: $white; 
+                }
+            }
+            .try {
+                @include base-flex-column();
+                align-content: center;
+                align-items: center;
+                text-decoration: none;
+                width: 110px;
+                height: 34px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .5px;
+                line-height: 15px;
+                padding: 8px 0;
+
+                &:hover {
+                    border: 2px solid $lightGreen;
+                    background-color: transparent;
+                    color: $lightGreen; 
+                }
             }
         }
-    }
+    
+    
 }

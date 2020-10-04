@@ -1,23 +1,50 @@
 //portrait 
 @media only screen and (min-width: 300px) and (max-width: 767px) {
-    //app
-    .app-container {
-        @include fit-content();
+    //navigation component
+    .nav-wrapper {
+        display: none;
     }
 
-    //nav bar
-    .nav-wrapper {
-        display: flex;
-        @include fit-content();
+    .nav-dropdown {    
+        position: relative;
+        display: inline-block;
+    }
+    
+    .nav-dropdown-content {
+        display: block;
+        position: absolute; 
+        background-color:  #ddd;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        
+    
+        a {
+            padding: 13px;
+            text-decoration: none;
+            background-color: white;
+            display: block;
+    
+            font-weight: 600;
+            color: $forestGreen;
+            font-size: 1.75rem;
+    
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+        
+        
+    } 
+    .nav-icon {
+        font-size:5.5rem;
+        color: $lightGreen;
 
-
-        .nav-icon {
-            display: flex;
-            font-size: 700%;
-            
+        &:hover {
+            color: $forestGreen;
+            cursor: pointer;
         }
     }
-
+    
     //home page
     .home-container {
         height: 812px;    
@@ -61,19 +88,16 @@
     //software page
     .software-container {
         @include base-flex-column();
-        @include fit-content();
-        margin: 0;
-        padding: 0;
-        
+        padding: 10px;
 
         .software-wrapper {
             @include base-flex-column();
-            @include fit-content();
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0;
-            padding: 0;
+            margin: 3px;
+            padding: 3px;
+            
 
             .software-player {
                 div {
@@ -82,14 +106,14 @@
                     align-items: center;
                     margin-top: 15px;
                     iframe {
-                        @include fit-content();
+                        height: 280px;
+                        width: 440px;
                     }
                 }
             }
 
             .software-content {
                 display: flex;
-                @include fit-content();
                 text-overflow: wrap;
                 padding: 15px;
                 margin: 20px;
@@ -104,12 +128,160 @@
         }
     }
 
+    //WhyBambooHr / about page mixed in one
+    .about-container {
+    
+        .about-wrapper {
+            flex-direction: column;
+            padding: 17px;
+            height: auto;
+           
+            
+    
+            .about-player {
+                display: flex;
+                margin: 7px;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                iframe {
+                    height: 280px;
+                    width: 440px;
+                }
+            }
+    
+            .about-content {
+                width: 440px;
+                margin: 7px; 
+                padding: 15px;   
+            }
+        }
+    }
+
+    //Blog components
+    .blog-container {
+        
+        .featured-blog-wrapper {
+            display: none;
+        }
+
+        .blog-records {
+            width: 75vw;
+            padding: 20px;
+        }
+
+    }
+
+    //contact page
+    .contact-container {
+
+        .contact-wrapper {
+            
+
+            .contact__info {
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .contact__social {
+                    display: none;
+                }
+            }
+            .contact-form {
+                flex-direction: column-reverse;
+                width: 75vw;
+                
+                .contact-form__map {
+                    width: 75vw;
+                    height: 360px;
+                    padding: 13px;
+                    margin-top: 7px;
+                }
+
+                .contact-form__form {
+                    padding: 13px;
+                }
+            }
+        }
+
+    }
+
+    //login pag
+    .login-container {
+        padding: 13px;
+        flex-direction: column;
+
+        .login-img {
+            padding: 17px;
+            height: 220px;
+            width: 55vw;
+            margin: 7px 21px;
+        }
+        .login-form {
+            padding: 7px;
+            .login-form__form {
+                
+            }
+
+            
+        }
+    }
+
+    //try it free page
+    .tryitfree-container {
+        padding: 7px;
+        height: 95vh;
+
+        .tryitfree-wrapper {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin: 15px;
+
+            .tryitfree-video {
+                display: flex;
+                margin: 7px;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                iframe {
+                    height: 280px;
+                    width: 440px;
+                }
+            }
+
+            .tryitfree-form {
+               text-overflow: wrap;
+                width: 440px;
+                padding: 7px;
+                margin: 3px;
+                
+                .tryitfree-form__form {
+
+                }
+            }
+        }
+
+    }
+
+
+    // chat widget removed from phone ui
+    .rcw-widget-container {
+        display: none;
+    }
+
     //footer
     .footer {
         @include base-flex-column();
         justify-content: center;
         align-items: center;
-        @include fit-content();
         background-size: cover;
         .footer-container {
             @include base-flex-column();
@@ -130,16 +302,7 @@
                         flex-direction: row;
                         margin: 7px;
                         padding: 7px;
-                        .footer-left-links__left {
-
-                        }
-                        .footer-left-links__right {
-
-                        }
                     }
-                }
-                .footer-right {
-                   
                 }
             } 
             .footer-wrapper-middle {
@@ -153,14 +316,137 @@
 
 }
 
-@media (min-width: 768px) and (max-width: 950px) {
+
+
+//tablet screen widths
+@media (min-width: 768px) and (max-width: 1300px) {
+
+
+
+    //software pages
+    .software-container {
+    
+        .software-wrapper {
+            flex-direction: column;
+
+            .software-player {
+                padding-bottom: 12px;
+            }
+    
+            .software-content {
+                border: 4px solid $forestGreen;
+                @include paragraph-element();
+                margin: 30px;
+              
+            }
+        }
+    }
+
+    //WhyBambooHr / about page mixed in one
+    .about-container {
+        @include basic-container-flexbox();
+    
+        .about-wrapper {
+            flex-direction: column;
+            padding: 17px;
+    
+            .about-player {
+                margin: 7px;
+            }
+    
+            .about-content {
+                margin: 7px; 
+                padding: 15px;   
+            }
+        }
+    }
+
+    //Blog components
+    .blog-container {
+
+        .featured-blog-wrapper {
+            display: none;
+        }
+
+        .blog-records {
+            width: 75vw;
+            padding: 20px;
+        }
+    }
+
+    //contact page
+    .contact-container {
+
+        .contact-wrapper {
+            
+            .contact__info {
+                grid-template-columns: 1fr 1fr 1fr;
+
+               .contact__social {
+                   display: none;
+               }
+            }
+            .contact-form {
+                flex-direction: column-reverse;
+                width: 55vw;
+                
+                .contact-form__map {
+                    width: 55vw;
+                    height: 360px;
+                    padding: 13px;
+                    margin-top: 7px;
+                }
+
+                .contact-form__form {
+                    padding: 13px;
+                }
+            }
+        }
+
+    }
+
+    //login pag
+    .login-container {
+        padding: 13px;
+
+        .login-img {
+            padding: 17px;
+            width: 55vw;
+            margin: 7px 21px;
+        }
+        .login-form {
+            padding: 7px;
+            .login-form__form {
+                
+            }
+
+            
+        }
+    }
+
+    //try it free page
+    .tryitfree-container {
+        padding: 21px;
+        height: 95vh;
+
+        .tryitfree-wrapper {
+            flex-direction: column;
+            padding: 27px;
+
+            .tryitfree-video {
+                margin: 7px;
+            }
+
+            .tryitfree-form {
+                padding: 13px;
+                margin: 0;
+                .tryitfree-form__form {
+
+                }
+            }
+        }
+
+    }
 
 }
-
-
-
-
-
-
-
 

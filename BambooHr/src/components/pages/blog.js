@@ -66,30 +66,34 @@ export default class Blog extends Component {
        return(
           <div className='blog-container'> 
             
-          <BlogModal  
-          handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
-          handleModalClose={this.handleModalClose}
-          modalIsOpen={this.state.blogModalIsOpen} />
+            <BlogModal  
+            handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
+            handleModalClose={this.handleModalClose}
+            modalIsOpen={this.state.blogModalIsOpen} />
 
-          <div className="new-blog-link">
-            <a onClick={this.handleNewBlogClick}>
-                  <FontAwesomeIcon icon="plus-circle" />
-            </a>
-          </div>
+            <div className="new-blog-link">
+               <a onClick={this.handleNewBlogClick}>
+                     <FontAwesomeIcon icon="plus-circle" />
+               </a>
+            </div>
                
-               {/**top 3 blogs to visible at the top of page smaller thumbnail **/}
-               <div className='blog-top-blogs'>
-                     <div className='blog-top-blog'>                       
-                        <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/>
-                        <h1>How to do a Virtual Interview</h1>
-                     </div>
-                     <div className='blog-top-blog'>                        
-                        <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/>
-                        <h1>Virtual training or no training?</h1>
-                     </div>
-                     <div className='blog-top-blog'>                        
-                        <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/> 
-                        <h1>Best ways to deal with Layoff due to Covid-19</h1>
+            {/**top 3 blogs to visible at the top of page smaller thumbnail **/}
+               <div className='featured-blog-wrapper'>
+                     <h1>Featured Blogs</h1>
+
+                     <div className='featured-blogs'>
+                        <div className='featured-blog'>                       
+                           <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/>
+                           <h1>How to do a Virtual Interview</h1>
+                        </div>
+                        <div className='featured-blog'>                        
+                           <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/>
+                           <h1>Virtual training or no training?</h1>
+                        </div>
+                        <div className='featured-blog'>                        
+                           <img className='blog-thumbnail' src='http://via.placeholder.com/180x180'/> 
+                           <h1>Best ways to deal with Layoff due to Covid-19</h1>
+                        </div>
                      </div>
                </div>
                

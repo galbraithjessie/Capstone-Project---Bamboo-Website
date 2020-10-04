@@ -15,6 +15,7 @@ export default class AboutUs extends Component {
 
               
                <div className='about-content'>
+                  <h1>Guide to Company Culture</h1>
                   <p>
                   BambooHR believes that a vibrant company culture which supports and nurtures <br></br> 
                   their employees is so important that it is the key to their success—and a unique <br></br> 

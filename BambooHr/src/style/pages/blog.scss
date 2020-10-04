@@ -34,25 +34,36 @@
 
 
 
-    .blog-top-blogs {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 1080px;
+    .featured-blog-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 20px;
         padding: 20px;
 
 
-        .blog-top-blog {
-            display: flex;
-            flex-direction: column;
+        .featured-blogs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
+            justify-content: center;
+            padding: 13px;
             
 
-            
+            .featured-blog {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 13px;
+                
+            }
 
             h1 {
                 font-size: 18px; 
                 margin-top: 24px;
+                text-decoration: wrap;
             }
         }
     }

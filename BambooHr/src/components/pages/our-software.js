@@ -16,7 +16,7 @@ export default class OurSoftware extends Component {
 
               
                <div className='software-content'>
-
+                   <h1>All In One HR Software Overview</h1>
                    <p>
                    BambooHR is an all-in-one HR software that exists to set you free to do great work. <br></br>
                    In this introductory video, you’ll learn about the main features of the platform, <br></br>

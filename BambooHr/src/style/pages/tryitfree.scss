@@ -1,5 +1,7 @@
 .tryitfree-container {
     @include basic-container-flexbox();
+    height: auto;
+    
     .tryitfree-wrapper {
         @include basic-wrapper-flexbox();
 

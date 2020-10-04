@@ -1,6 +1,5 @@
 .contact-container {
-    height: auto;
-    width: auto;
+    padding: 27px;
 
     .contact-wrapper {
         display: flex;
@@ -12,13 +11,12 @@
         .contact__info {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            justify-content: space-around;
+            width: 85vw;
+            justify-content: space-between;
             gap: 100px;
             line-height: 28px;
             margin: 28px;
-            padding-bottom: 48px;
-            padding-top: 48px;
+            padding: 28px;
 
             h1 {
                 font-size: 20px;
