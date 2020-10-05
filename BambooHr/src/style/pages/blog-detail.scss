@@ -16,6 +16,13 @@
 
         .content {
             height: min($numbers: 600px);
+
+            
+            p {
+                padding: 4px;
+                margin: 4px;
+            }
+            
         }
     }
 }

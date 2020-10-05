@@ -7,14 +7,15 @@
 
     .nav-dropdown {    
         position: relative;
-        display: inline-block;
+        display: block;
     }
     
     .nav-dropdown-content {
         display: block;
-        position: absolute; 
+        position: relative; 
         background-color:  #ddd;
         min-width: 160px;
+        max-width: 200px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         
     
@@ -175,6 +176,32 @@
         }
 
     }
+    .blog-detail-container {
+        height: max-content;
+        
+        .detail-content-container {
+            padding: 5px 9px;
+            margin: 7px;
+            width: fit-content;
+            
+            .content {
+                height: fit-content;
+
+                p {
+                    text-overflow: wrap;
+                }
+            }
+
+        }
+        .blog-form-wrapper input {
+            width: 100%;
+        }
+    }
+    .ReactModal__Content, .ReactModal__Content--after-open {
+        width: 480px;
+        height: 680px;
+    }
+    
 
     //contact page
     .contact-container {
@@ -321,6 +348,15 @@
 //tablet screen widths
 @media (min-width: 768px) and (max-width: 1300px) {
 
+    //nav
+    .nav-wrapper {
+        .nav-logo {
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 22px;
+            width: 150px;
+        }
+    }
 
 
     //software pages
@@ -372,6 +408,43 @@
             width: 75vw;
             padding: 20px;
         }
+    }
+
+    .blog-detail-container {
+        padding: 17px;
+        height: min(750px);
+        .detail-content-container {
+            padding: 17px;
+            margin: 3px;
+            width: fit-content;
+            text-overflow: wrap;
+        }
+    }
+
+    // blog modal 
+    .blog-form-wrapper {
+        @include base-grid();
+        grid-template-columns: 1fr;
+        padding: 42px;
+    
+        @include input-element();
+        
+        input {
+            width: 100%;
+            font-size: 2em;
+        }
+        
+    
+        .btn-modal {
+            @include base-btn();
+            height: 38px;
+            width: 400px;
+        }
+    }
+
+    .ReactModal__Content, .ReactModal__Content--after-open {
+        width: 880px;
+        height: 480px;
     }
 
     //contact page
@@ -446,6 +519,13 @@
             }
         }
 
+    }
+
+    
+
+       // chat widget removed from tablet
+       .rcw-widget-container {
+        display: none;
     }
 
 }
