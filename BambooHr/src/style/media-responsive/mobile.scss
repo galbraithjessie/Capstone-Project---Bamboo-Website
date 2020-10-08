@@ -48,41 +48,23 @@
     
     //home page
     .home-container {
-        height: 812px;    
-        background: $backGround;
-        background-repeat: no-repeat;
-        background-size: auto;
-    
-        display: grid;
-        align-items: inherit;
-        justify-items: center;
-        grid-template-columns: 1fr;
-    
+        height: 790px;
+        background-size: cover;
+        justify-content: flex-start;
         .home-title {
-            height: 110px;
-            display: flex;
-            align-items: center;
-            color: $white;
-            font-size: 10em;
-            font-weight: 600;
+            margin-top: 55px;
+            font-size: 60px;
+            
         }
     
-        .home-video {
-            @include fit-content();
-            margin-top: 20px;
-            height: 600px;
+        .home-video {    
+           height: 45%;
+           width: 75%;
+           margin-top: 0;
         }
     
         .btn {
-           height: 48px;
-           width: 180px;
-           transition: 0.3s ease-in-out; 
-           
-           &:hover {
-               border: 2px solid $forestGreen;
-               background-color: $forestGreen;
-    
-           }
+           border: 2px solid $forestGreen;
         }
     }
 
@@ -201,7 +183,7 @@
         width: 480px;
         height: 680px;
     }
-    
+
 
     //contact page
     .contact-container {
@@ -355,6 +337,25 @@
             background-size: contain;
             height: 22px;
             width: 150px;
+        }
+    }
+
+       //home page
+       .home-container {
+     
+        .home-title {
+            height: 110px;            
+        }
+    
+        .home-video {
+            
+            width: 65%;   
+        }
+        
+        .home-form {
+            .btn {
+                
+            }
         }
     }
 
