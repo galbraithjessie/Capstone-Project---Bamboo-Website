@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { FortAwesomeIcon, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 import BlogItem from "../blogComponents/blog-item";
 import BlogModal from '../modals/blog-modal';
 
@@ -20,6 +19,24 @@ export default class Blog extends Component {
       this.handleNewBlogClick = this.handleNewBlogClick.bind(this);
       this.handleModalClose = this.handleModalClose.bind(this);
       this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(this);
+      this.handleDeleteClick = this.handleDeleteClick.bind(this);
+   }
+
+   handleDeleteClick(blog) {
+      axios.delete(
+         `https://flask-backend-capstone.herokuapp.com/blog/${blog.id}`
+         ).then(response =>{
+            this.setState({
+              blogItems: this.state.blogItems.filter(blogItem => {
+                return blog.id != blogItem.id;
+              })
+            });
+      
+            return response.data;
+            
+         }).catch(error => {
+            console.log("delete blog error", error);
+         });
    }
 
    handleSuccessfulNewBlogSubmission(blog) {
@@ -48,6 +65,7 @@ export default class Blog extends Component {
          this.setState({
             blogItems: response.data
          })
+         console.log(response.data);
       }).catch(error => {
          console.log('getBlotItems', error);
       })
@@ -58,9 +76,17 @@ export default class Blog extends Component {
    }
 
    render() {
+      const id = this.props.id
             // creates an array to map over and put in descending order.
       const blogRecords = [].concat(this.state.blogItems).sort((a,b) => b.id - a.id).map(blogItem => { 
-         return <BlogItem key={blogItem.id} blogItem={blogItem} /> 
+         return (
+            <div key={blogItem.id} id={id} >
+               <BlogItem blogItem={blogItem} /> 
+               <a className="action-icon" onClick={() => this.handleDeleteClick(blogItem)}>
+                  <FontAwesomeIcon icon="trash" />
+               </a>
+            </div>
+         )
       });
 
        return(

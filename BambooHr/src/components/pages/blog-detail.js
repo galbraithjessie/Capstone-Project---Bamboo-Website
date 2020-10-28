@@ -15,6 +15,14 @@ export default class BlogDetail extends Component {
             };
             
         this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleUpdateFormSubmission = this.handleUpdateFormSubmission.bind(this);
+    }
+
+    handleUpdateFormSubmission(blog) {
+        this.setState({
+            blogItem: blog,
+            editMode: false
+        });
     }
 
     handleEditClick() {
@@ -26,7 +34,8 @@ export default class BlogDetail extends Component {
         ).then(response => {
             this.setState({
                 blogItem: response.data
-            })                
+            }) 
+            console.log(response.data);               
         }).catch(error => {
             console.log('getBlogItem', error);    
         });
@@ -38,8 +47,9 @@ export default class BlogDetail extends Component {
 
    render() {
        const {
+           id,
            title,
-           content
+           content,
        } = this.state.blogItem;
 
        const contentManager = () => {
@@ -50,7 +60,7 @@ export default class BlogDetail extends Component {
                />
            } else {
               return (
-              <div className="detail-content-container">
+              <div id={id} className="detail-content-container">
                 <h1 onClick={this.handleEditClick}>{title}</h1>
 
                 <div className="content">{HtmlParser(content)}</div>

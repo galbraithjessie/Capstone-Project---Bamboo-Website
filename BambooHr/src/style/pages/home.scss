@@ -11,8 +11,8 @@
     .home-title {
         height: 110px;
         margin-bottom: 27px;
-        background-color: $lightGreen;
-        border: 3px solid $forestGreen;
+        background: rgba(115, 196, 29, 0.5);
+        border: 2px solid $forestGreen;
         border-radius: 9px;
         padding: 17px;
         display: flex;
@@ -20,6 +20,8 @@
         color: $white;
         font-size: 84px;
         font-weight: 600;
+
+       
     }
 
     .home-video {

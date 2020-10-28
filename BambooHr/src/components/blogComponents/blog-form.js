@@ -10,7 +10,10 @@ export default class BlogForm extends Component {
         this.state = {
             id: "",
             title: "",
-            content: ""
+            content: "",
+            editMode: false,
+            apiUrl: "https://flask-backend-capstone.herokuapp.com/blog",
+            apiAction: "post"
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -22,7 +25,10 @@ export default class BlogForm extends Component {
         if (this.props.editMode) {
             this.setState({
                 id: this.props.blog.id,
-                title: this.props.blog.title    
+                title: this.props.blog.title,
+                content: this.props.blog.content,
+                apiUrl: `https://flask-backend-capstone.herokuapp.com/blog/${this.props.blog.id}`,
+                apiAction: "PUT"  
             });
         }
     }
@@ -33,22 +39,26 @@ export default class BlogForm extends Component {
 
     handleSubmit(event) {
                     // add auth as a third argument on this after buildForm do withCredentials: true
-        axios.post(
-            "https://flask-backend-capstone.herokuapp.com/blog", 
-            {title: this.state.title, content: this.state.content}
-            ).then(response => {
+        axios({
+            method: this.state.apiAction,
+            url: this.state.apiUrl, 
+            data: {title: this.state.title, content: this.state.content}  
+            }).then(response => {
                 this.setState({
                     title: "",
                     content: ""
                 });
 
-                this.props.handleSuccessfulFormSubmission(response.data); 
+                if (this.props.editMode) {
+                    this.props.handleUpdateFormSubmission(response.data);
+                } else {
+                this.props.handleSuccessfullFormSubmission(this.state);
+                }
+
             }).catch(error => {
                 console.log('handleSubmit for Blog error', error);
             });
 
-
-        this.props.handleSuccessfulFormSubmission(this.state)
         event.preventDefault();
     }
 

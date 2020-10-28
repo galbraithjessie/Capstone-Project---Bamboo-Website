@@ -73,6 +73,17 @@
         flex-direction: column;
         width: 800px;
 
+        .action-icon {
+            color: $forestGreen;
+            display: flex;
+            justify-content: flex-end;
+
+            svg {
+                font-size: 3rem;
+                
+            }
+        }
+
         div {
             padding-bottom: 30px;
             h1 {
