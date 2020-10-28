@@ -52,7 +52,7 @@ export default class BlogForm extends Component {
                 if (this.props.editMode) {
                     this.props.handleUpdateFormSubmission(response.data);
                 } else {
-                this.props.handleSuccessfullFormSubmission(this.state);
+                this.props.handleSuccessfullFormSubmission(response.data);
                 }
 
             }).catch(error => {

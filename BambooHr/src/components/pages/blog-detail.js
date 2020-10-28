@@ -34,8 +34,7 @@ export default class BlogDetail extends Component {
         ).then(response => {
             this.setState({
                 blogItem: response.data
-            }) 
-            console.log(response.data);               
+            });            
         }).catch(error => {
             console.log('getBlogItem', error);    
         });

@@ -64,8 +64,7 @@ export default class Blog extends Component {
       .then(response => {
          this.setState({
             blogItems: response.data
-         })
-         console.log(response.data);
+         });
       }).catch(error => {
          console.log('getBlotItems', error);
       })
