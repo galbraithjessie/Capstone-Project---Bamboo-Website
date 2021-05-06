@@ -71,7 +71,7 @@
     "react": "^16.8.0",
     "react-chat-widget": "^3.0.5",
     "react-dom": "^16.8.0",
-    "react-draft-wysiwyg": "^1.14.5",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-gsap": "^2.2.1",
     "react-html-parser": "^2.0.2",
     "react-modal": "^3.11.2",
